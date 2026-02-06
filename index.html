@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+<!-- PyScript CSS -->
+<link rel="stylesheet" href="https://pyscript.net/releases/2025.7.3/core.css" />
+
+<title>Seatwork 2 Third Quarter</title>
+
+<style>
+body {
+  background: linear-gradient(135deg, #1d428a 0%, #c8102e 100%);
+  font-family: 'Arial Black', Gadget, sans-serif;
+  color: #fff;
+}
+
+.card {
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.5);
+  background: linear-gradient(135deg, #1d428a 0%, #0b0b0b 100%); /* NBA blue → black */
+  border: 3px solid #c8102e; /* NBA red */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+  }
+
+  h2 {
+    font-family: 'Arial Black', Gadget, sans-serif;
+    font-weight: 900;
+    color: #d4af37; /* Gold color for NBA championship vibe */
+    text-shadow: 2px 2px 4px #000;
+  }
+
+  .btn-signup {
+    background-color: #b48e14; /* Gold color for buttons */
+    color: #000;
+    font-weight: 700;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .btn-signup:hover {
+    background-color: #bfa24f; /* Slightly darker gold on hover */
+    transform: translateY(-2px);
+  }
+
+  .form-label {
+    font-weight: 700;
+    color: #fff;
+    font-family: 'Arial Black', Gadget, sans-serif;
+  }
+
+  #output, #image {
+    font-family: 'Arial Black', Gadget, sans-serif;
+    color: #fff;
+  }
+</style>
+</head>
+<body class="d-flex justify-content-center align-items-center vh-100 p-3">
+
+<div class="card p-4 w-100 max-w-md">
+  <h2 class="text-center mb-4">NBA DRAFT PICK</h2>
+  <form>
+    <div class="mb-4">
+      <label class="form-label">Are you done with the online registration?</label>
+      <div class="d-flex gap-3 mt-2">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" id="registered" name="registration" value="registered" />
+          <label class="form-check-label" for="registered">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" id="notRegistered" name="registration" value="notRegistered" />
+          <label class="form-check-label" for="notRegistered">No</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label class="form-label">Do you have the medical clearance from the clinic?</label>
+      <div class="d-flex gap-3 mt-2">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" id="cleared" name="clearance" value="cleared" />
+          <label class="form-check-label" for="cleared">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" id="notCleared" name="clearance" value="notCleared" />
+          <label class="form-check-label" for="notCleared">No</label>
+        </div>
+      </div>
+    </div>
+
+<select id="section" class="form-select" aria-label="Select Section">
+  <option value='7 Emerald'>7 Emerald</option>
+  <option value='7 Ruby'>7 Ruby</option>
+  <option value='8 Emerald'>8 Emerald</option>
+  <option value='8 Ruby'>8 Ruby</option>
+  <option value='9 Emerald'>9 Emerald</option>
+  <option value='9 Ruby'>9 Ruby</option>
+  <option value='10 Emerald'>10 Emerald</option>
+  <option value='10 Ruby'>10 Ruby</option>
+</select>
+
+    <div class="d-grid mt-4">
+      <button type="button" py-click="intrams_checker"
+  class="btn btn-signup btn-lg">
+  Enter the Game
+</button>
+    </div>
+  </form>
+  <div class="text-center mt-4">
+    <div id="output" class="mb-2"></div>
+    <div id="image"></div>
+  </div>
+</div>
+
+<script src="https://pyscript.net/releases/2025.7.3/core.js" type="module"></script>
+<py-script src="main.py"></py-script>
+
+</body>
+</html>
